@@ -7,11 +7,11 @@ require "wellspring/version"
 Gem::Specification.new do |s|
   s.name        = "wellspring"
   s.version     = Wellspring::VERSION
-  s.authors     = ["Piotr Chmolowski"]
-  s.email       = ["piotr@chmolowski.pl"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Wellspring."
-  s.description = "TODO: Description of Wellspring."
+  s.authors     = ["Piotr Chmolowski", "Dante Wan"]
+  s.email       = ["piotr@chmolowski.pl", "danteyxw@outlook.com"]
+  s.homepage    = "https://github.com/Danteyxw/wellspring"
+  s.summary     = "Added image upload to Wellspring"
+  s.description = "Added image upload to Wellspring"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
@@ -29,6 +29,10 @@ Gem::Specification.new do |s|
 
   s.add_dependency "pygments.rb"
   s.add_dependency "redcarpet"
+
+  s.add_dependency "carrierwave"
+  s.add_dependency "fog-aws"
+  s.add_dependency "mini_magick"
 
   s.add_development_dependency "pg"
 end
