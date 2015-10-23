@@ -5,5 +5,7 @@ Wellspring::Engine.routes.draw do
     resources :entries
   end
 
+  resources :images, only: [:index, :new, :create, :delete]
+
   root to: 'dashboard#index'
 end

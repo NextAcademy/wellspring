@@ -1,0 +1,7 @@
+<div>
+  <%= simple_form_for @image do |f| %>
+    <br>
+    <%= f.input :url, as: :file %>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  <% end %>
+</div>
