@@ -4,7 +4,7 @@ module Wellspring
 	class ImagesController < ApplicationController
 
 		def index
-			@images = Wellspring::Image.all
+			@images = Wellspring::Image.all.order("created_at DESC")
 		end
 
 		def new
@@ -12,16 +12,29 @@ module Wellspring
 		end
 
 		def create
+      puts "============="
+      puts "begin create"
+      puts params
 			@image = Wellspring::Image.new(image_params)
 
 			if @image.save
-        redirect_to images_path, notice: 'Image was successfully uploaded.'
+        respond_to do |format|
+          format.json { render json: @image.to_json }
+          format.html { redirect_to images_path, notice: 'Image was successfully uploaded.' }
+        end
       else
         render :new
       end
 		end
 
 		def destroy
+      puts "============="
+      puts "begin destroy"
+      puts params
+      @image = Image.find(params[:id])
+      @image.destroy!
+
+      redirect_to :back
 		end
 
 		private

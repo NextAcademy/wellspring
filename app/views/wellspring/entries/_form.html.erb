@@ -8,12 +8,18 @@
       <%= f.input attr_name, as: attr_type %>
     <% end %>
 
+    <a href="#" id="images-button" class="btn btn-primary">Add Images</a>
+
     <%= f.input :slug %>
     <%= f.input :author_name %>
     <%= f.input :published_at %>
 
     <%= f.submit "Save", class: "btn btn-primary" %>
   <% end %>
+
+  <div class="modal" id="images-panel">
+    <%= render partial: "wellspring/images/panel" %>
+  </div>
 </div>
 
 <div class="col-6">

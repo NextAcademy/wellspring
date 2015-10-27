@@ -13,9 +13,12 @@ module Wellspring
 
     def new
       @entry = Entry.new(type: content_class)
+      @images = Wellspring::Image.all.order("created_at DESC")
+      @image = Image.new
     end
 
     def edit
+      @images = Wellspring::Image.all.order("created_at DESC")
     end
 
     def create

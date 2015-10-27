@@ -16,8 +16,8 @@
     <% @images.each do |image| %>
       <tr>
         <td><%= image_tag image.url.url(:preview) %></td>
-        <td><%= image.url.url %></td>
         <td><%= time_ago_in_words image.created_at %> ago</td>
+        <td><button class="show-url" data-url="<%= image.url.url %>">Show URL</button></td>
         <td><%= link_to 'Destroy', image_path(image), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

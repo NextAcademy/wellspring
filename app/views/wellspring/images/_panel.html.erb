@@ -1,0 +1,26 @@
+<div class="modal-content">
+  <div class="modal-head">
+    <h2>Images</h2>
+    <a href="#" class="btn btn-primary space-2 image-upload-button">Upload New Image</a>
+    <%= render 'wellspring/images/form' %>
+  </div>
+
+  <div class="modal-body">
+    <table class="table space-4">
+      <tbody id="modal-images-table-body">
+        <% @images.each do |image| %>
+          <tr>
+            <td><%= image_tag image.url.url(:preview) %></td>
+            <td><%= time_ago_in_words image.created_at %> ago</td>
+            <td><button class="show-url" data-url="<%= image.url.url %>">Show URL</button></td>
+            <td><%= link_to 'Destroy', image, class: "image-delete-button" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal-foot">
+    <button class="modal-close-button">Close</button>
+  </div>
+</div>
