@@ -19,6 +19,7 @@ module Wellspring
 
     def edit
       @images = Wellspring::Image.all.order("created_at DESC")
+      @image = Image.new
     end
 
     def create

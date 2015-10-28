@@ -20,10 +20,12 @@ $(document).ready(function() {
 
   $(".modal .image-upload-form").submit(function(e) {
     e.preventDefault();
-    e.stopImmediatePropagation();
+    // e.stopImmediatePropagation();
 
     var fd = new FormData(this);
     fd.append("label", "WEBUPLOAD");
+
+    $(".image-create-button").attr("disabled", true);
 
     $.ajax({
       url: $(this).attr("action"),
@@ -44,6 +46,9 @@ $(document).ready(function() {
       },
       error: function() {
         alert("Create action has failed.");
+      },
+      complete: function() {
+        $(".image-create-button").attr("disabled", false);
       }
     });
   });
