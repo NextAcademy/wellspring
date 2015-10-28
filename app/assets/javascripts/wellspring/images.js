@@ -57,14 +57,16 @@ $(document).ready(function() {
     if (confirmation) {
       $.ajax({
         url: $(this).attr("href"),
-        method: "DELETE",
-        success: function() {
-          $(this).parents("tr").remove();
-        },
-        error: function() {
-          alert("Delete action has failed.");
-        }
+        method: "DELETE"
+        // - beware of commas!
+        // success: function() {
+        //   $(this).parents("tr").remove();
+        // },
+        // error: function() {
+        //   alert("Delete action has failed.");
+        // }
       });
+      $(this).parents("tr").remove();
     }
   }));
 
