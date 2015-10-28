@@ -10,9 +10,9 @@
       <tbody id="modal-images-table-body">
         <% @images.each do |image| %>
           <tr>
-            <td><%= image_tag image.url.url(:preview) %></td>
+            <td><%= image_tag image.file.url(:preview) %></td>
             <td><%= time_ago_in_words image.created_at %> ago</td>
-            <td><button class="show-url" data-url="<%= image.url.url %>">Show URL</button></td>
+            <td><button class="show-url" data-url="<%= image.file.url %>">Show URL</button></td>
             <td><%= link_to 'Destroy', image, class: "image-delete-button" %></td>
           </tr>
         <% end %>

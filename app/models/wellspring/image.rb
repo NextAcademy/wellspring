@@ -1,5 +1,5 @@
 module Wellspring
 	class Image < ActiveRecord::Base
-		mount_uploader :url, ImageUploader
+		mount_uploader :file, ImageUploader
 	end
 end

@@ -10,7 +10,7 @@ $(document).ready(function() {
     $(this).parents(".modal").hide();
   });
 
-  $("#modal-images-table-body").on("click", ".show-url", (function(e) {
+  $("body").on("click", ".show-url", (function(e) {
     window.prompt("Copy this URL", $(this).attr("data-url"));
   }));
 
@@ -35,9 +35,9 @@ $(document).ready(function() {
       success: function(data) {
         $("#modal-images-table-body").prepend("\
           <tr>\
-            <td><img src='"+data.url.preview.url+"'></td>\
+            <td><img src='"+data.file.preview.url+"'></td>\
             <td>less than a minute ago</td>\
-            <td><button class='show-url' data-url='"+data.url.url+"'>Show URL</button></td>\
+            <td><button class='show-url' data-url='"+data.file.url+"'>Show URL</button></td>\
             <td><a class='image-delete-button' rel='nofollow' href='/admin/images/"+data.id+"'>Destroy</a></td>\
           </tr>\
           ");

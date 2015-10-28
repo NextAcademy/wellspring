@@ -12,8 +12,7 @@ module Wellspring
 		end
 
 		def create
-      puts "============="
-      puts "begin create"
+      puts "===="
       puts params
 			@image = Wellspring::Image.new(image_params)
 
@@ -40,7 +39,7 @@ module Wellspring
 		private
 
 		def image_params
-      params.require(:image).permit(:url)
+      params.require(:image).permit(:file)
     end
 
 	end
