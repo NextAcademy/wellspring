@@ -1,4 +1,4 @@
-<%= simple_form_for @image, remote: true, html: { class: "image-upload-form" } do |f| %>
+<%= simple_form_for @image, html: { class: "image-upload-form" } do |f| %>
   <br>
   <%= f.input :file, as: :file, label: false %>
   <%= f.submit "Save", class: "btn btn-primary image-create-button" %>

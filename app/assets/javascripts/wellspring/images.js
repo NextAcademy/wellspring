@@ -50,6 +50,7 @@ $(document).ready(function() {
 
   $("#modal-images-table-body").on("click", ".image-delete-button", (function(e) {
     e.preventDefault();
+    e.stopImmediatePropagation();
 
     var confirmation = window.confirm("Are you sure?");
     debugger

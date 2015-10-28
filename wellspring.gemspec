@@ -7,11 +7,11 @@ require "wellspring/version"
 Gem::Specification.new do |s|
   s.name        = "wellspring"
   s.version     = Wellspring::VERSION
-  s.authors     = ["Piotr Chmolowski", "Dante Wan"]
-  s.email       = ["piotr@chmolowski.pl", "danteyxw@outlook.com"]
-  s.homepage    = "https://github.com/Danteyxw/wellspring"
-  s.summary     = "Added image upload to Wellspring"
-  s.description = "Added image upload to Wellspring"
+  s.authors     = ["Piotr Chmolowski"]
+  s.email       = ["piotr@chmolowski.pl"]
+  s.homepage    = ""
+  s.summary     = "Added AWS S3 image upload with carrierwave to Wellspring"
+  s.description = "Added AWS S3 image upload with carrierwave to Wellspring"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
