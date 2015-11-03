@@ -13,9 +13,13 @@ module Wellspring
 
     def new
       @entry = Entry.new(type: content_class)
+      @images = Wellspring::Image.all.order("created_at DESC")
+      @image = Image.new
     end
 
     def edit
+      @images = Wellspring::Image.all.order("created_at DESC")
+      @image = Image.new
     end
 
     def create
@@ -48,7 +52,7 @@ module Wellspring
     end
 
     def entry_params
-      allowed_attrs = %i(id type title slug published_at)
+      allowed_attrs = %i(id type title slug published_at author_name)
         .concat(content_class.constantize.content_attributes.keys)
 
       params.require(:entry).permit(*allowed_attrs)
