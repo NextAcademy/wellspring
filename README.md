@@ -2,35 +2,38 @@
 
 Wellspring is a flexible CMS engine for Rails apps. You can use it to create any type of content website (blogs, magazines, portfolios etc.).
 
-This is the source code for my tutorial: [How to Build a CMS in Ruby on Rails](http://pchm.co/tutorial-how-to-build-a-cms-in-ruby-on-rails/).
-
 ## Getting Started
 
+### Step One
 ```ruby
 # Gemfile
 gem 'wellspring', github: 'dante/wellspring', branch: 'production'
 ```
 
+### Step Two
 ```
 $ bundle install
+$ rake wellspring:install
 ```
 
-This version depends on carrierwave and fog to upload images to a cloud provider.
+### Step Three
+Tweak `config/initializer/carrierwave.rb` with your desired configuration.
 
-Create a `config/initializer/carrierwave.rb` with the following settings:
 
-```ruby
-CarrierWave.configure do |config|
-  config.fog_credentials = {
-    :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID'], # change accordingly
-    :aws_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'], # change accordingly
-    :provider => 'AWS' # or change this to your preferred provider
-  }
+## Dependencies
 
-  config.fog_directory = 'directoryname'
-  config.fog_public = true
-end
-```
+*Wellspring depends on carrierwave and fog to upload images to a cloud provider.*
+
+## Acknowledgement
+
+Wellspring was first authored by [Piotr Chmolowski](https://github.com/pch/).
+
+It was first intended to be a tutorial to teach Ruby-on-Rails developers on how to build a reusable CMS in any Rails projects.
+
+We found this to be one of the most flexible and lightweight CMS solution for Rails and have therefore decided to work on it further!
+
+Find the tutorial here: [How to Build a CMS in Ruby on Rails](http://pchm.co/tutorial-how-to-build-a-cms-in-ruby-on-rails/).
+
 
 ## License
 
