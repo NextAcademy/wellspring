@@ -7,8 +7,8 @@ require "wellspring/version"
 Gem::Specification.new do |s|
   s.name        = "wellspring"
   s.version     = Wellspring::VERSION
-  s.authors     = ["Piotr Chmolowski"]
-  s.email       = ["piotr@chmolowski.pl"]
+  s.authors     = ["Piotr Chmolowski", "Dante Wan", "Josh Teng", "NEXT Academy"]
+  s.email       = ["piotr@chmolowski.pl", "josh@nextacademy.com"]
   s.homepage    = ""
   s.summary     = "Added AWS S3 image upload with carrierwave to Wellspring"
   s.description = "Added AWS S3 image upload with carrierwave to Wellspring"
