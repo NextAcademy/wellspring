@@ -8,7 +8,7 @@ This is the source code for my tutorial: [How to Build a CMS in Ruby on Rails](h
 
 ```ruby
 # Gemfile
-gem 'wellspring', github: 'dante/wellspring', branch: 'aws-s3-production'
+gem 'wellspring', github: 'dante/wellspring', branch: 'production'
 ```
 
 ```
