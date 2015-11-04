@@ -5,5 +5,10 @@ Wellspring::Engine.routes.draw do
     resources :entries
   end
 
+  resources :images, only: [:index, :new, :create, :destroy]
+
   root to: 'dashboard#index'
 end
+
+# DELETE /:content_class/entries/:id(.:format) wellspring/entries#destroy
+# DELETE /images/:id(.:format)                 wellspring/images#destroy

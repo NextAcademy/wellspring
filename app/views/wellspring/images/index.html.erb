@@ -1,0 +1,25 @@
+<h1>Images</h1>
+
+<%= link_to "Upload New Image", new_image_path, class: 'btn btn-primary space-2' %>
+
+<table class="table space-4">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>URL</th>
+      <th>Created at</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @images.each do |image| %>
+      <tr>
+        <td><%= image_tag image.file.url(:preview) %></td>
+        <td><%= time_ago_in_words image.created_at %> ago</td>
+        <td><button class="show-url" data-url="<%= image.file.url %>">Show URL</button></td>
+        <td><%= link_to 'Destroy', image_path(image), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
