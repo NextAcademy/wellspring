@@ -1,3 +1,3 @@
 module Wellspring
-  VERSION = "1.0.0rc"
+  VERSION = "1.0.0.rc"
 end
