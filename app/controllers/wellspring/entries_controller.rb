@@ -36,6 +36,8 @@ module Wellspring
       if @entry.update(entry_params)
         redirect_to content_entry_path(@entry), notice: 'Entry was successfully updated.'
       else
+        @images = Wellspring::Image.all.order("created_at DESC")
+        @image = Image.new
         render :edit
       end
     end
