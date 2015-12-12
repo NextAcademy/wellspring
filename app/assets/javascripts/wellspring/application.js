@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require trumbowyg/trumbowyg.min
 //= require_tree .
